@@ -1,6 +1,6 @@
 package com.fintrack.finance.dto;
 
-import com.fintrack.finance.enums.TransactionType;
+import com.fintrack.finance.dto.TransactionType;
 import lombok.Data;
 
 import java.util.Date;

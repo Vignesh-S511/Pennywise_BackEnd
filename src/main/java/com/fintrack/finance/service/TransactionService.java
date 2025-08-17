@@ -10,6 +10,9 @@ import com.fintrack.finance.repo.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
+import java.util.Date;
+import java.util.List;
 import java.util.NoSuchElementException;
 
 @Service
@@ -49,4 +52,16 @@ public class TransactionService {
     }
 
 
+    public Transaction readTransactionById(int id,int userId) {
+        return transactionRepo.findByIdAndUserId(id, userId)
+                .orElseThrow(() -> new RuntimeException("Transaction not found for this user"));
+    }
+
+    public List<Transaction> readTransaction() {
+        return transactionRepo.findAll();
+    }
+
+    public List<Transaction> readTransactionByDateRange(LocalDateTime start, LocalDateTime end, int userId) {
+        return transactionRepo.findByDateBetweenAndUserId(start,end,userId);
+    }
 }

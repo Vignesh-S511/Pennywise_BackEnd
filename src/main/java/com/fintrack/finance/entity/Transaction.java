@@ -1,7 +1,6 @@
 package com.fintrack.finance.entity;
-
 import java.util.Date;
-import com.fintrack.finance.enums.TransactionType;
+import com.fintrack.finance.dto.TransactionType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
